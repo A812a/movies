@@ -1,0 +1,175 @@
+
+
+<!--banner start -->
+<div class="contain-fluid">
+  <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active"
+         data-bs-interval="5000"
+         *ngFor="let b of bannerResult,let i = index"
+         [ngClass]="{active:i===1}">
+          <img
+          src="https://image.tmdb.org/t/p/original/{{b.backdrop_path}}"
+          class="d-block"
+          alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h2>{{b.original_title}}</h2>
+            <p>{{b.overview}}</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+</div>
+<!--banner end -->
+
+<div class="contain mt-3 p-4">
+
+  <!-- trending movies -->
+  <div class="mt-4">
+    <h5 class="ms-3 text-white">Trending Movies</h5>
+    <owl-carousel-o [options]="customOptions">
+
+      <ng-container *ngFor="let t of TrendingMovieResult">
+        <ng-template carouselSlide>
+          <img src="https://image.tmdb.org/t/p/original/{{t.poster_path}}"
+          class="rowimg"
+          [routerLink]="['/movie',t.id]"
+          alt="...">
+          <!-- height="300" -->
+
+        <!--  largeposter -->
+      </ng-template>
+      </ng-container>
+
+    </owl-carousel-o>
+  </div>
+
+         <!-- action movies -->
+         <div class="mt-4">
+          <h5 class="ms-3 text-white">Action Movies</h5>
+          <owl-carousel-o [options]="customOptions">
+
+            <ng-container *ngFor="let a of actionMovieResult">
+              <ng-template carouselSlide>
+                <img src="https://image.tmdb.org/t/p/original/{{a.poster_path}}"
+                class="rowimg"
+                [routerLink]="['/movie',a.id]"
+                alt="...">
+                <!-- height="300" -->
+                <!--  largeposter -->
+            </ng-template>
+            </ng-container>
+
+          </owl-carousel-o>
+        </div>
+
+       <!-- adventrue movies -->
+       <div class="mt-4">
+        <h5 class="ms-3 text-white">Adventrue Movies</h5>
+        <owl-carousel-o [options]="customOptions">
+
+          <ng-container *ngFor="let d of adventrueMovieResult">
+            <ng-template carouselSlide>
+              <img src="https://image.tmdb.org/t/p/original/{{d.poster_path}}"
+              class="rowimg"
+              [routerLink]="['/movie',d.id]"
+              alt="...">
+              <!-- height="300" -->
+              <!--  largeposter -->
+          </ng-template>
+          </ng-container>
+
+        </owl-carousel-o>
+      </div>
+
+       <!-- comedy movies -->
+       <div class="mt-4">
+        <h5 class="ms-3 text-white">Comedy Movies</h5>
+        <owl-carousel-o [options]="customOptions">
+
+          <ng-container *ngFor="let c of ComedyMovieResult">
+            <ng-template carouselSlide>
+              <img src="https://image.tmdb.org/t/p/original/{{c.poster_path}}"
+              class="rowimg"
+              [routerLink]="['/movie',c.id]"
+              alt="...">
+              <!-- height="300" -->
+              <!--  largeposter -->
+          </ng-template>
+          </ng-container>
+
+        </owl-carousel-o>
+      </div>
+
+     <!-- documentary movies -->
+     <div class="mt-4">
+      <h5 class="ms-3 text-white">Documentary Movies</h5>
+      <owl-carousel-o [options]="customOptions">
+
+        <ng-container *ngFor="let d of documentaryMovieResult">
+          <ng-template carouselSlide>
+            <img src="https://image.tmdb.org/t/p/original/{{d.poster_path}}"
+            class="rowimg"
+            [routerLink]="['/movie',d.id]"
+            alt="...">
+            <!-- height="300" -->
+            <!--  largeposter -->
+        </ng-template>
+        </ng-container>
+
+      </owl-carousel-o>
+    </div>
+
+   <!-- scienceFiction movies -->
+   <div class="mt-4">
+    <h5 class="ms-3 text-white">Science Fiction Movies</h5>
+    <owl-carousel-o [options]="customOptions">
+
+      <ng-container *ngFor="let s of scienceFictionMovieResult">
+        <ng-template carouselSlide>
+        <img src="https://image.tmdb.org/t/p/original/{{s.poster_path}}"
+          class="rowimg"
+          [routerLink]="['/movie',s.id]"
+          alt="...">
+          <!-- height="300" -->
+          <!--  largeposter -->
+      </ng-template>
+      </ng-container>
+
+    </owl-carousel-o>
+  </div>
+
+  <!-- thriller movies -->
+  <div class="mt-4">
+    <h5 class="ms-3 text-white">Thriller Movies</h5>
+    <owl-carousel-o [options]="customOptions">
+
+      <ng-container *ngFor="let t of thrillerMovieResult">
+        <ng-template carouselSlide>
+          <img src="https://image.tmdb.org/t/p/original/{{t.poster_path}}"
+          class="rowimg"
+          [routerLink]="['/movie',t.id]"
+          alt="...">
+          <!-- height="300" -->
+          <!-- largeposter -->
+      </ng-template>
+      </ng-container>
+
+    </owl-carousel-o>
+  </div>
+
+
+
+
+</div>
+
+
+
